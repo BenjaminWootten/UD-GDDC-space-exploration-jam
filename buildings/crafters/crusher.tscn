@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmvnmajg4h84j"]
+
+[ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="1_rmbki"]
+[ext_resource type="PackedScene" uid="uid://g6on45cl571h" path="res://buildings/building resources/input.tscn" id="2_hju6h"]
+[ext_resource type="PackedScene" uid="uid://b02mpu4t3xc8w" path="res://buildings/building resources/output.tscn" id="3_nougl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmsgu"]
+size = Vector2(124, 122)
+
+[node name="Crusher" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rmbki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vmsgu")
+
+[node name="Input" parent="." instance=ExtResource("2_hju6h")]
+
+[node name="Output" parent="." instance=ExtResource("3_nougl")]
