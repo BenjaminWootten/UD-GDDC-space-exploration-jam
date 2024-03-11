@@ -16,6 +16,7 @@ modulate = Color(0.203922, 0.203922, 0.203922, 1)
 texture = ExtResource("1_v1wl3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -15)
 shape = SubResource("RectangleShape2D_2c3pg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

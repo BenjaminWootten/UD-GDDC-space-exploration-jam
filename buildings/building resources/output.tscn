@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b02mpu4t3xc8w"]
+[gd_scene load_steps=4 format=3 uid="uid://b02mpu4t3xc8w"]
 
+[ext_resource type="Script" path="res://buildings/building resources/output.gd" id="1_m15lo"]
 [ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="1_uc0x3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlm5x"]
@@ -8,6 +9,7 @@ size = Vector2(124, 16)
 [node name="Output" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("1_m15lo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)

@@ -1,17 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5qp4noe7qt3s"]
 
+[ext_resource type="Shape2D" uid="uid://ufpogfkxk8kh" path="res://items/item_hitbox.tres" id="1_fd48i"]
 [ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="1_fpqe7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6htp"]
-size = Vector2(40, 40)
 
 [node name="iron" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 0
 gravity_scale = 0.0
+metadata/item_type = "iron"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_l6htp")
+shape = ExtResource("1_fd48i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(3, 3, 3, 1)
