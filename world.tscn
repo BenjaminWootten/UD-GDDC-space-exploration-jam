@@ -7,6 +7,12 @@
 
 [node name="World" type="Node2D"]
 
+[node name="machines" type="Node2D" parent="."]
+
+[node name="Crusher" parent="machines" instance=ExtResource("4_ssxuj")]
+position = Vector2(797, 156)
+rotation = 1.5708
+
 [node name="conveyors" type="Node2D" parent="."]
 
 [node name="Conveyor" parent="conveyors" instance=ExtResource("2_3vhja")]
@@ -34,15 +40,9 @@ rotation = 3.14159
 [node name="items" type="Node2D" parent="."]
 
 [node name="iron" parent="items" instance=ExtResource("3_weype")]
-position = Vector2(522, 435)
+position = Vector2(546, 373)
 
 [node name="iron2" parent="items" instance=ExtResource("3_weype")]
-position = Vector2(537, 383)
-
-[node name="machines" type="Node2D" parent="."]
-
-[node name="Crusher" parent="machines" instance=ExtResource("4_ssxuj")]
-position = Vector2(797, 156)
-rotation = 1.5708
+position = Vector2(549, 445)
 
 [node name="Player" parent="." instance=ExtResource("1_85nff")]

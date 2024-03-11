@@ -18,6 +18,7 @@ func _ready():
 
 func _physics_process(delta):
 	# Handle player conveyor behavior
+	var i = 0
 	for body in bodies:
 		if body.name == "Player":
 			var directional_velocity = body.velocity * direction
@@ -26,12 +27,17 @@ func _physics_process(delta):
 			if directional_velocity.x < MOVE_SPEED.x and directional_velocity.y < MOVE_SPEED.y and directional_velocity.x >= 0 and directional_velocity.y >= 0:
 				body.velocity += direction * MOVE_SPEED
 		else:
-			body.linear_velocity = direction * MOVE_SPEED
+			if i < 1:
+				body.linear_velocity = direction * MOVE_SPEED
+			i += 1
 
 func _on_body_entered(body):
 	bodies.append(body)
+	if body.name != "Player":
+		body.add_conveyor()
 
 func _on_body_exited(body):
 	bodies.erase(body)
 	if body.name != "Player":
 		body.linear_velocity = Vector2.ZERO
+		body.subtract_conveyor()
