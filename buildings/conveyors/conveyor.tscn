@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="1_v1wl3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c3pg"]
-size = Vector2(128, 126)
+size = Vector2(28, 156)
 
 [node name="Conveyor" type="Area2D"]
 collision_layer = 0

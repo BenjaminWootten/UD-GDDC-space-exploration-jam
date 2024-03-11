@@ -1,14 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgsw0w3y4jvc0"]
+[gd_scene load_steps=4 format=3 uid="uid://dgsw0w3y4jvc0"]
 
 [ext_resource type="PackedScene" uid="uid://cn1hsv2nyoqrj" path="res://Player.tscn" id="1_85nff"]
 [ext_resource type="PackedScene" uid="uid://f8wyhdc87t2w" path="res://buildings/conveyors/conveyor.tscn" id="2_3vhja"]
+[ext_resource type="PackedScene" uid="uid://c5qp4noe7qt3s" path="res://items/iron.tscn" id="3_weype"]
 
 [node name="World" type="Node2D"]
 
 [node name="Conveyor" parent="." instance=ExtResource("2_3vhja")]
-position = Vector2(542, 415)
+position = Vector2(542, 412)
 
 [node name="Conveyor2" parent="." instance=ExtResource("2_3vhja")]
 position = Vector2(542, 286)
 
+[node name="Conveyor3" parent="." instance=ExtResource("2_3vhja")]
+position = Vector2(542, 159)
+rotation = 1.5708
+
+[node name="Conveyor4" parent="." instance=ExtResource("2_3vhja")]
+position = Vector2(668, 159)
+rotation = 1.5708
+
+[node name="Conveyor5" parent="." instance=ExtResource("2_3vhja")]
+position = Vector2(795, 159)
+rotation = 3.14159
+
+[node name="Conveyor6" parent="." instance=ExtResource("2_3vhja")]
+position = Vector2(795, 286)
+rotation = 3.14159
+
+[node name="Conveyor7" parent="." instance=ExtResource("2_3vhja")]
+position = Vector2(795, 412)
+rotation = 4.71239
+
+[node name="Conveyor8" parent="." instance=ExtResource("2_3vhja")]
+position = Vector2(668, 412)
+rotation = 4.71239
+
 [node name="Player" parent="." instance=ExtResource("1_85nff")]
+
+[node name="iron" parent="." instance=ExtResource("3_weype")]
+position = Vector2(522, 435)
+
+[node name="iron2" parent="." instance=ExtResource("3_weype")]
+position = Vector2(537, 383)
