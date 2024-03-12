@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmvnmajg4h84j"]
+[gd_scene load_steps=7 format=3 uid="uid://cmvnmajg4h84j"]
 
 [ext_resource type="Script" path="res://buildings/crafters/crusher.gd" id="1_6k6qk"]
 [ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="1_rmbki"]
 [ext_resource type="PackedScene" uid="uid://g6on45cl571h" path="res://buildings/building resources/input.tscn" id="2_hju6h"]
 [ext_resource type="PackedScene" uid="uid://b02mpu4t3xc8w" path="res://buildings/building resources/output.tscn" id="3_nougl"]
+[ext_resource type="PackedScene" uid="uid://danurr23cm2s4" path="res://UI/building_ui.tscn" id="5_cgiwc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmsgu"]
 size = Vector2(124, 122)
@@ -23,5 +24,9 @@ shape = SubResource("RectangleShape2D_vmsgu")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="building_ui" parent="CanvasLayer" instance=ExtResource("5_cgiwc")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

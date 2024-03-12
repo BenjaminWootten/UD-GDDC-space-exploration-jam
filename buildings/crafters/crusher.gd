@@ -8,13 +8,12 @@ var input_inventory = 0
 var output_inventory = 0
 
 var recipes = {
-	iron_plate = {input_type = "iron", input_num = 1, output_type = "iron_plate", output_num = 1, time = 1}
+	none = {input_type = "none", input_num = 0, output_type = "none", output_num = 0, time = 0},
+	iron_plate = {input_type = "iron", input_num = 1, output_type = "iron_plate", output_num = 1, time = 1},
+	glorp_juice = {input_type = "glorp", input_num = 1, output_type = "glorp_balls", output_num = 1, time = 1}
 }
 
-var recipe
-
-func _ready():
-	update_recipe("iron_plate")
+var recipe = recipes["none"]
 
 func update_recipe(newRecipe):
 	recipe = recipes[newRecipe]
