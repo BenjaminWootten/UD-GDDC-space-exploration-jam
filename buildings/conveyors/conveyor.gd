@@ -1,6 +1,6 @@
 extends Area2D
 
-const MOVE_SPEED = Vector2(200, 200)
+@export var MOVE_SPEED = Vector2(200, 200)
 
 var direction = Vector2.ZERO
 var bodies = []

@@ -7,42 +7,57 @@
 
 [node name="World" type="Node2D"]
 
-[node name="machines" type="Node2D" parent="."]
-
-[node name="Crusher" parent="machines" instance=ExtResource("4_ssxuj")]
-position = Vector2(797, 156)
-rotation = 1.5708
-
 [node name="conveyors" type="Node2D" parent="."]
 
 [node name="Conveyor" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(542, 412)
+position = Vector2(192, 192)
 
 [node name="Conveyor2" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(542, 286)
+position = Vector2(192, 224)
 
 [node name="Conveyor3" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(542, 159)
-rotation = 1.5708
+position = Vector2(192, 256)
 
 [node name="Conveyor4" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(668, 159)
+position = Vector2(192, 160)
 rotation = 1.5708
 
 [node name="Conveyor5" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(924, 157)
+position = Vector2(224, 160)
 rotation = 1.5708
 
 [node name="Conveyor6" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(1052, 158)
+position = Vector2(256, 160)
+rotation = 1.5708
+
+[node name="Conveyor7" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(320, 160)
+rotation = 1.5708
+
+[node name="Conveyor8" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(352, 160)
+rotation = 1.5708
+
+[node name="Conveyor9" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(384, 160)
+rotation = 3.14159
+
+[node name="Conveyor10" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(384, 192)
 rotation = 3.14159
 
 [node name="items" type="Node2D" parent="."]
 
 [node name="iron" parent="items" instance=ExtResource("3_weype")]
-position = Vector2(546, 373)
+position = Vector2(192, 256)
 
 [node name="iron2" parent="items" instance=ExtResource("3_weype")]
-position = Vector2(549, 445)
+position = Vector2(192, 224)
+
+[node name="machines" type="Node2D" parent="."]
+
+[node name="Crusher" parent="machines" instance=ExtResource("4_ssxuj")]
+position = Vector2(288, 160)
+rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource("1_85nff")]

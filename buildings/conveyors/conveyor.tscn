@@ -4,19 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="1_v1wl3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c3pg"]
-size = Vector2(28, 154)
+size = Vector2(4, 41)
 
 [node name="Conveyor" type="Area2D"]
 collision_layer = 0
 collision_mask = 6
 script = ExtResource("1_fl3m8")
+MOVE_SPEED = Vector2(100, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.203922, 0.203922, 0.203922, 1)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_v1wl3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -2)
+position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_2c3pg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
