@@ -17,6 +17,7 @@ grow_vertical = 2
 collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_gkbb0")
+destroy_texture = ExtResource("2_3mu45")
 crusher_texture = ExtResource("2_3mu45")
 conveyor_texture = ExtResource("2_3mu45")
 hitbox_2x2 = ExtResource("3_8c454")
@@ -44,6 +45,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Destroy" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Destroy"
+
 [node name="conveyor" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 text = "Conveyor"
@@ -56,5 +61,6 @@ text = "Crusher"
 [connection signal="area_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
 [connection signal="body_entered" from="placement_preview" to="placement_preview" method="_on_body_entered"]
 [connection signal="body_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/Destroy" to="placement_preview" method="_on_destroy_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/conveyor" to="placement_preview" method="_on_conveyor_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/crusher" to="placement_preview" method="_on_crusher_pressed"]
