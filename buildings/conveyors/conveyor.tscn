@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="1_v1wl3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c3pg"]
-size = Vector2(4, 41)
+size = Vector2(4, 44)
 
 [node name="Conveyor" type="Area2D"]
 collision_layer = 0
@@ -18,7 +18,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_v1wl3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4.5)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_2c3pg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

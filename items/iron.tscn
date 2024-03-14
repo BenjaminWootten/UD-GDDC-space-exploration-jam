@@ -13,7 +13,6 @@ metadata/item_type = "iron"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(3, 3, 3, 1)
-position = Vector2(2.38419e-07, 2.38419e-07)
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_fpqe7")
 

@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0xyhvyrdq3gl"]
+
+[ext_resource type="Script" path="res://UI/placement_preview.gd" id="1_gkbb0"]
+[ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="2_3mu45"]
+[ext_resource type="Shape2D" uid="uid://cog31ntdmglii" path="res://buildings/building resources/2x2_hitbox.tres" id="3_8c454"]
+[ext_resource type="Shape2D" uid="uid://c0n0i1f5hw0ot" path="res://buildings/building resources/1x1_hitbox.tres" id="4_bsy6g"]
+
+[node name="build_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="placement_preview" type="Area2D" parent="."]
+script = ExtResource("1_gkbb0")
+crusher_texture = ExtResource("2_3mu45")
+conveyor_texture = ExtResource("2_3mu45")
+hitbox_2x2 = ExtResource("3_8c454")
+hitbox_1x1 = ExtResource("4_bsy6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="placement_preview"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="placement_preview"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 24.0
+offset_right = 159.0
+offset_bottom = -24.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="conveyor" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Conveyor"
+
+[node name="crusher" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Crusher"
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/conveyor" to="placement_preview" method="_on_conveyor_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/crusher" to="placement_preview" method="_on_crusher_pressed"]
