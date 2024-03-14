@@ -56,6 +56,5 @@ text = "Crusher"
 [connection signal="area_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
 [connection signal="body_entered" from="placement_preview" to="placement_preview" method="_on_body_entered"]
 [connection signal="body_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
-[connection signal="input_event" from="placement_preview" to="placement_preview" method="_on_input_event"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/conveyor" to="placement_preview" method="_on_conveyor_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/crusher" to="placement_preview" method="_on_crusher_pressed"]
