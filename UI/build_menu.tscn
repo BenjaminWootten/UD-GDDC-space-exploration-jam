@@ -14,6 +14,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="placement_preview" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 9
 script = ExtResource("1_gkbb0")
 crusher_texture = ExtResource("2_3mu45")
 conveyor_texture = ExtResource("2_3mu45")
@@ -50,5 +52,10 @@ text = "Conveyor"
 layout_mode = 2
 text = "Crusher"
 
+[connection signal="area_entered" from="placement_preview" to="placement_preview" method="_on_body_entered"]
+[connection signal="area_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
+[connection signal="body_entered" from="placement_preview" to="placement_preview" method="_on_body_entered"]
+[connection signal="body_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
+[connection signal="input_event" from="placement_preview" to="placement_preview" method="_on_input_event"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/conveyor" to="placement_preview" method="_on_conveyor_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/crusher" to="placement_preview" method="_on_crusher_pressed"]
