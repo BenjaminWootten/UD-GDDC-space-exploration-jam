@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://t2dkaldacovr"]
+
+[ext_resource type="FontFile" uid="uid://b3rt8sl6kgtup" path="res://UI/assets/QuirkyRobot.ttf" id="1_qfhr3"]
+[ext_resource type="Texture2D" uid="uid://dvqqfkb84v7d8" path="res://UI/assets/GUI.png" id="2_o5u2c"]
+
+[node name="ChangeRecipe" type="MenuButton"]
+texture_filter = 1
+offset_right = 76.0
+offset_bottom = 52.0
+mouse_force_pass_scroll_events = false
+theme_override_fonts/font = ExtResource("1_qfhr3")
+theme_override_font_sizes/font_size = 60
+text = "Change Recipe"
+flat = false
+switch_on_hover = true
+item_count = 2
+popup/item_0/text = "BALLS"
+popup/item_0/icon = ExtResource("2_o5u2c")
+popup/item_0/id = 0
+popup/item_1/text = "nuts"
+popup/item_1/id = 1
