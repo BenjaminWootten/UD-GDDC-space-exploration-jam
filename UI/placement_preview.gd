@@ -25,6 +25,15 @@ func _process(delta):
 	if placing:
 		self.global_position = snapped(get_global_mouse_position(), Vector2(SNAP, SNAP))
 		position += Vector2(offset, offset)
+		
+		if Input.is_action_pressed("left_click") and not colliding:
+			var placement = building_to_place.instantiate()
+			if building_to_place == conveyor_path:
+				conveyor_container.add_child(placement)
+			else:
+				building_container.add_child(placement)
+			placement.position = global_position
+			placement.rotation = global_rotation
 
 func placement_start(texture: CompressedTexture2D, hitbox: RectangleShape2D, newOffset: int, building: PackedScene):
 	placing = true
@@ -40,14 +49,6 @@ func placement_end():
 
 func _input(event):
 	if placing:
-		if event.is_action_pressed("left_click") and not colliding:
-			var placement = building_to_place.instantiate()
-			if building_to_place == conveyor_path:
-				conveyor_container.add_child(placement)
-			else:
-				building_container.add_child(placement)
-			placement.position = global_position
-			placement.rotation = global_rotation
 		if event.is_action_pressed("quit_build"):
 			placement_end()
 		if event.is_action_pressed("rotate"):
