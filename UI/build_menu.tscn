@@ -5,7 +5,13 @@
 [ext_resource type="Shape2D" uid="uid://cog31ntdmglii" path="res://buildings/building resources/2x2_hitbox.tres" id="3_8c454"]
 [ext_resource type="Shape2D" uid="uid://c0n0i1f5hw0ot" path="res://buildings/building resources/1x1_hitbox.tres" id="4_bsy6g"]
 
-[node name="build_menu" type="Node2D"]
+[node name="build_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="placement_preview" type="Area2D" parent="."]
 collision_layer = 8

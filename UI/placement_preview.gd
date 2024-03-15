@@ -5,7 +5,7 @@ extends Area2D
 @onready var timer = $Timer
 
 var placing: bool
-var colliders = []
+var last_collider
 var building_to_place
 var colliding = false
 var offset = 0
@@ -25,13 +25,6 @@ var conveyor_path = preload("res://buildings/conveyors/conveyor.tscn")
 @export var hitbox_1x1: RectangleShape2D
 
 func _process(delta):
-	
-	if get_overlapping_areas() or get_overlapping_bodies():
-		colliders = get_overlapping_areas() + get_overlapping_bodies()
-		colliding = true
-	else:
-		colliding = false
-	
 	if placing:
 		# Move preview to mouse
 		self.global_position = snapped(get_global_mouse_position(), Vector2(SNAP, SNAP))
@@ -50,16 +43,12 @@ func _process(delta):
 			timer.start()
 		
 		# Destroy building
-		if Input.is_action_pressed("right_click") and colliding and timer.is_stopped() and colliders:
-			# delete all current colliders
-			for collider in colliders:
-			# Conveyors have placement collider as a child, so remove parent to remove whole conveyor
-				if collider.name == "placement_collider":
-					collider.get_parent().queue_free()
-				# Or just remove object as normal for other stuff
-				else:
-					collider.queue_free()
-				colliders.erase(collider)
+		if Input.is_action_pressed("right_click") and colliding and timer.is_stopped() and last_collider:
+			if last_collider.name == "placement_collider":
+				last_collider.get_parent().queue_free()
+			else:
+				last_collider.queue_free()
+			last_collider = null
 			timer.start()
 
 func placement_start(texture: CompressedTexture2D, hitbox: RectangleShape2D, newOffset: int, building: PackedScene):
@@ -83,6 +72,18 @@ func _input(event):
 			placement_end()
 		if event.is_action_pressed("rotate") and placing:
 			rotation_degrees += 90
+
+func _on_body_entered(body):
+	entered_bodies += 1
+	colliding = true
+	sprite.modulate = Color(1,0,0)
+	last_collider = body
+
+func _on_body_exited(_body):
+	entered_bodies -= 1
+	if entered_bodies == 0:
+		colliding = false
+		sprite.modulate = Color(0,1,0)
 
 func _on_conveyor_pressed():
 	placement_start(conveyor_texture, hitbox_1x1, 0, conveyor_path)
