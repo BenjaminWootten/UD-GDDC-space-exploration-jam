@@ -1,87 +1,539 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgsw0w3y4jvc0"]
+[gd_scene load_steps=11 format=3 uid="uid://dgsw0w3y4jvc0"]
 
 [ext_resource type="PackedScene" uid="uid://cn1hsv2nyoqrj" path="res://Player.tscn" id="1_85nff"]
 [ext_resource type="PackedScene" uid="uid://f8wyhdc87t2w" path="res://buildings/conveyors/conveyor.tscn" id="2_3vhja"]
+[ext_resource type="PackedScene" uid="uid://cxvelhgs8tpat" path="res://buildings/crafters/smelter.tscn" id="2_d2xt1"]
 [ext_resource type="PackedScene" uid="uid://1u0npjhd7wdi" path="res://items/lead_ore.tscn" id="2_xkrht"]
+[ext_resource type="PackedScene" uid="uid://cmvnmajg4h84j" path="res://buildings/crafters/crusher.tscn" id="3_jj58v"]
+[ext_resource type="PackedScene" uid="uid://cyng6mvbc5luo" path="res://buildings/crafters/amalgamator.tscn" id="4_oo2r2"]
+[ext_resource type="PackedScene" uid="uid://r7khkwstv4oy" path="res://items/coal.tscn" id="5_2kuuo"]
+[ext_resource type="PackedScene" uid="uid://bw271u3pp3qnf" path="res://buildings/crafters/crafter.tscn" id="5_ixtx0"]
 [ext_resource type="PackedScene" uid="uid://d0xyhvyrdq3gl" path="res://UI/build_menu.tscn" id="5_xdaow"]
+[ext_resource type="PackedScene" uid="uid://bd8p23w83exsb" path="res://items/sulfur.tscn" id="8_n3rnu"]
 
 [node name="World" type="Node2D"]
 
 [node name="conveyors" type="Node2D" parent="."]
 
 [node name="Conveyor" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(128, -32)
-
-[node name="Conveyor2" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(128, -64)
-
-[node name="Conveyor3" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(128, -96)
-
-[node name="Conveyor4" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(128, -128)
+position = Vector2(120, -24)
 
 [node name="Conveyor5" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(128, -160)
-rotation = 1.57079
+position = Vector2(184, -24)
 
 [node name="Conveyor6" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(160, -160)
-rotation = 1.57079
-
-[node name="Conveyor7" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(192, -160)
-rotation = 1.57079
-
-[node name="Conveyor8" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(224, -160)
-rotation = 1.57079
+position = Vector2(184, -56)
 
 [node name="Conveyor9" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(256, -160)
-rotation = 1.57079
+position = Vector2(248, -56)
 
 [node name="Conveyor10" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(288, -160)
-rotation = 1.57079
+position = Vector2(248, -24)
+
+[node name="Conveyor7" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, -88)
 
 [node name="Conveyor11" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(320, -160)
-rotation = 3.14159
+position = Vector2(184, -184)
+rotation = 1.57079
+
+[node name="Conveyor56" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, -312)
+rotation = 1.57079
+
+[node name="Conveyor57" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(152, -312)
+rotation = 1.57079
+
+[node name="Conveyor58" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, -312)
+
+[node name="Conveyor59" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(216, -312)
+
+[node name="Conveyor60" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, -312)
+rotation = -1.57079
+
+[node name="Conveyor61" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(216, -408)
+rotation = -1.57079
+
+[node name="Conveyor62" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, -408)
+rotation = -1.57079
+
+[node name="Conveyor63" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(152, -408)
+rotation = -1.57079
+
+[node name="Conveyor64" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, -408)
+rotation = -1.57079
+
+[node name="Conveyor65" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(88, -408)
+rotation = 1.57079
 
 [node name="Conveyor12" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(320, -128)
-rotation = 3.14159
-
-[node name="Conveyor13" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(320, -96)
-rotation = 3.14159
-
-[node name="Conveyor14" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(320, -64)
-rotation = 3.14159
+position = Vector2(216, -184)
 
 [node name="Conveyor15" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(320, -32)
-rotation = 4.71238
+position = Vector2(216, -216)
+
+[node name="Conveyor13" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, -184)
+
+[node name="Conveyor14" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, -216)
+
+[node name="Conveyor8" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, -88)
+
+[node name="Conveyor2" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, -24)
+
+[node name="Conveyor3" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, -56)
+
+[node name="Conveyor4" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, -88)
 
 [node name="Conveyor16" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(288, -32)
-rotation = 4.71238
+position = Vector2(120, 72)
 
 [node name="Conveyor17" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(256, -32)
-rotation = 4.71238
+position = Vector2(184, 72)
+
+[node name="Conveyor18" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 40)
+
+[node name="Conveyor19" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 40)
+
+[node name="Conveyor20" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 72)
+
+[node name="Conveyor21" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 8)
+
+[node name="Conveyor22" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 8)
+
+[node name="Conveyor23" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 72)
+
+[node name="Conveyor24" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 40)
+
+[node name="Conveyor25" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 8)
+
+[node name="Conveyor26" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 168)
+
+[node name="Conveyor27" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 168)
+
+[node name="Conveyor28" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 136)
+
+[node name="Conveyor29" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 136)
+
+[node name="Conveyor30" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 168)
+
+[node name="Conveyor31" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 104)
+
+[node name="Conveyor32" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 104)
+
+[node name="Conveyor33" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 168)
+
+[node name="Conveyor34" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 136)
+
+[node name="Conveyor35" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 104)
+
+[node name="Conveyor36" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 264)
+
+[node name="Conveyor37" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 264)
+
+[node name="Conveyor38" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 232)
+
+[node name="Conveyor39" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 232)
+
+[node name="Conveyor40" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 264)
+
+[node name="Conveyor41" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 200)
+
+[node name="Conveyor42" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 200)
+
+[node name="Conveyor43" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 264)
+
+[node name="Conveyor44" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 232)
+
+[node name="Conveyor45" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 200)
+
+[node name="Conveyor46" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 360)
+
+[node name="Conveyor47" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 360)
+
+[node name="Conveyor48" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 328)
+
+[node name="Conveyor49" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 328)
+
+[node name="Conveyor50" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 360)
+
+[node name="Conveyor51" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 296)
+
+[node name="Conveyor52" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 296)
+
+[node name="Conveyor53" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 360)
+
+[node name="Conveyor54" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 328)
+
+[node name="Conveyor55" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 296)
+
+[node name="Conveyor66" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 456)
+
+[node name="Conveyor67" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 456)
+
+[node name="Conveyor68" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 424)
+
+[node name="Conveyor69" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 424)
+
+[node name="Conveyor70" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 456)
+
+[node name="Conveyor71" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 392)
+
+[node name="Conveyor72" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 392)
+
+[node name="Conveyor73" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 456)
+
+[node name="Conveyor74" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 424)
+
+[node name="Conveyor75" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 392)
+
+[node name="Conveyor76" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 552)
+
+[node name="Conveyor77" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 552)
+
+[node name="Conveyor78" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 520)
+
+[node name="Conveyor79" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 520)
+
+[node name="Conveyor80" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 552)
+
+[node name="Conveyor81" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 488)
+
+[node name="Conveyor82" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 488)
+
+[node name="Conveyor83" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 552)
+
+[node name="Conveyor84" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 520)
+
+[node name="Conveyor85" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 488)
+
+[node name="Conveyor86" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 648)
+
+[node name="Conveyor87" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 648)
+
+[node name="Conveyor88" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 616)
+
+[node name="Conveyor89" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 616)
+
+[node name="Conveyor90" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 648)
+
+[node name="Conveyor91" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 584)
+
+[node name="Conveyor92" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 584)
+
+[node name="Conveyor93" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 648)
+
+[node name="Conveyor94" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 616)
+
+[node name="Conveyor95" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 584)
+
+[node name="Conveyor96" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 744)
+
+[node name="Conveyor97" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 744)
+
+[node name="Conveyor98" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 712)
+
+[node name="Conveyor99" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 712)
+
+[node name="Conveyor100" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 744)
+
+[node name="Conveyor101" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 680)
+
+[node name="Conveyor102" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 680)
+
+[node name="Conveyor103" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 744)
+
+[node name="Conveyor104" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 712)
+
+[node name="Conveyor105" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 680)
+
+[node name="Conveyor106" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 808)
+
+[node name="Conveyor107" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 808)
+
+[node name="Conveyor108" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 776)
+
+[node name="Conveyor109" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 776)
+
+[node name="Conveyor110" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 808)
+
+[node name="Conveyor111" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 776)
+
+[node name="Conveyor112" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 904)
+
+[node name="Conveyor113" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 904)
+
+[node name="Conveyor114" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 872)
+
+[node name="Conveyor115" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 872)
+
+[node name="Conveyor116" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 904)
+
+[node name="Conveyor117" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 840)
+
+[node name="Conveyor118" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 840)
+
+[node name="Conveyor119" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 904)
+
+[node name="Conveyor120" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 872)
+
+[node name="Conveyor121" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 840)
+
+[node name="Conveyor122" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1000)
+
+[node name="Conveyor123" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 1000)
+
+[node name="Conveyor124" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 968)
+
+[node name="Conveyor125" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 968)
+
+[node name="Conveyor126" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 1000)
+
+[node name="Conveyor127" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 936)
+
+[node name="Conveyor128" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 936)
+
+[node name="Conveyor129" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1000)
+
+[node name="Conveyor130" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 968)
+
+[node name="Conveyor131" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 936)
+
+[node name="Conveyor132" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1096)
+
+[node name="Conveyor133" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 1096)
+
+[node name="Conveyor134" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 1064)
+
+[node name="Conveyor135" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 1064)
+
+[node name="Conveyor136" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 1096)
+
+[node name="Conveyor137" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 1032)
+
+[node name="Conveyor138" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 1032)
+
+[node name="Conveyor139" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1096)
+
+[node name="Conveyor140" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1064)
+
+[node name="Conveyor141" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1032)
+
+[node name="Conveyor142" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1192)
+
+[node name="Conveyor143" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 1192)
+
+[node name="Conveyor144" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 1160)
+
+[node name="Conveyor145" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 1160)
+
+[node name="Conveyor146" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 1192)
+
+[node name="Conveyor147" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 1128)
+
+[node name="Conveyor148" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 1128)
+
+[node name="Conveyor149" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1192)
+
+[node name="Conveyor150" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1160)
+
+[node name="Conveyor151" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1128)
+
+[node name="Conveyor152" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 1256)
+
+[node name="Conveyor153" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 1256)
+
+[node name="Conveyor154" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(184, 1224)
+
+[node name="Conveyor155" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(248, 1224)
+
+[node name="Conveyor156" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1256)
+
+[node name="Conveyor157" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(120, 1224)
 
 [node name="machines" type="Node2D" parent="."]
+
+[node name="Smelter" parent="machines" instance=ExtResource("2_d2xt1")]
+position = Vector2(104, -136)
+
+[node name="Crusher" parent="machines" instance=ExtResource("3_jj58v")]
+position = Vector2(168, -136)
+
+[node name="Crusher2" parent="machines" instance=ExtResource("3_jj58v")]
+position = Vector2(232, -136)
+
+[node name="Crusher3" parent="machines" instance=ExtResource("3_jj58v")]
+position = Vector2(104, -200)
+
+[node name="amalgamator" parent="machines" instance=ExtResource("4_oo2r2")]
+position = Vector2(232, -264)
+
+[node name="amalgamator2" parent="machines" instance=ExtResource("4_oo2r2")]
+position = Vector2(200, -360)
+
+[node name="Crafter" parent="machines" instance=ExtResource("5_ixtx0")]
+position = Vector2(104, -264)
 
 [node name="items" type="Node2D" parent="."]
 
 [node name="lead_ore" parent="items" instance=ExtResource("2_xkrht")]
-position = Vector2(120, -24)
+position = Vector2(120, 1256)
 
 [node name="lead_ore2" parent="items" instance=ExtResource("2_xkrht")]
-position = Vector2(120, -24)
+position = Vector2(120, 1256)
+
+[node name="coal" parent="items" instance=ExtResource("5_2kuuo")]
+position = Vector2(184, 1256)
+
+[node name="coal2" parent="items" instance=ExtResource("5_2kuuo")]
+position = Vector2(184, 1256)
+
+[node name="sulfur" parent="items" instance=ExtResource("8_n3rnu")]
+position = Vector2(248, 1256)
 
 [node name="build_menu" parent="." instance=ExtResource("5_xdaow")]
 
