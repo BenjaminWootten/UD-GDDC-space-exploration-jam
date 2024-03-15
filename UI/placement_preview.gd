@@ -2,10 +2,10 @@ extends Area2D
 
 @onready var sprite = $Sprite2D
 @onready var collisionShape = $CollisionShape2D
+@onready var timer = $Timer
 
 var placing: bool
-var destroying: bool
-var last_collider: Node2D
+var last_collider
 var building_to_place
 var colliding = false
 var offset = 0
@@ -25,23 +25,31 @@ var conveyor_path = preload("res://buildings/conveyors/conveyor.tscn")
 @export var hitbox_1x1: RectangleShape2D
 
 func _process(delta):
-	if placing or destroying:
+	if placing:
+		# Move preview to mouse
 		self.global_position = snapped(get_global_mouse_position(), Vector2(SNAP, SNAP))
 		position += Vector2(offset, offset)
 		
-		if placing:
-			if Input.is_action_pressed("left_click") and not colliding:
-				var placement = building_to_place.instantiate()
-				if building_to_place == conveyor_path:
-					conveyor_container.add_child(placement)
-				else:
-					building_container.add_child(placement)
-				placement.position = global_position
-				placement.rotation = global_rotation
-			
-		if destroying:
-			if Input.is_action_pressed("left_click") and colliding:
+		# Place building
+		if Input.is_action_pressed("left_click") and not colliding and timer.is_stopped():
+			var placement = building_to_place.instantiate()
+			placement.set("rotation", rotation)
+			# Set parent either conveyor or machine groups
+			if building_to_place == conveyor_path:
+				conveyor_container.add_child(placement)
+			else:
+				building_container.add_child(placement)
+			placement.position = global_position
+			timer.start()
+		
+		# Destroy building
+		if Input.is_action_pressed("right_click") and colliding and timer.is_stopped() and last_collider:
+			if last_collider.name == "placement_collider":
+				last_collider.get_parent().queue_free()
+			else:
 				last_collider.queue_free()
+			last_collider = null
+			timer.start()
 
 func placement_start(texture: CompressedTexture2D, hitbox: RectangleShape2D, newOffset: int, building: PackedScene):
 	placing = true
@@ -50,14 +58,16 @@ func placement_start(texture: CompressedTexture2D, hitbox: RectangleShape2D, new
 	offset = newOffset
 	building_to_place = building
 
+func _on_color_rect_mouse_entered():
+	placement_end()
+
 func placement_end():
 	placing = false
-	destroying = false
 	sprite.texture = null
 	collisionShape.shape = null
 
 func _input(event):
-	if placing or destroying:
+	if placing:
 		if event.is_action_pressed("quit_build"):
 			placement_end()
 		if event.is_action_pressed("rotate") and placing:
@@ -74,13 +84,6 @@ func _on_body_exited(_body):
 	if entered_bodies == 0:
 		colliding = false
 		sprite.modulate = Color(0,1,0)
-
-func _on_destroy_pressed():
-	destroying = true
-	sprite.texture = destroy_texture
-	collisionShape.shape = hitbox_1x1
-	offset = 0
-	sprite.scale = Vector2(0.25,0.25)
 
 func _on_conveyor_pressed():
 	placement_start(conveyor_texture, hitbox_1x1, 0, conveyor_path)

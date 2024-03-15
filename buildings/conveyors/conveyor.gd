@@ -6,14 +6,14 @@ var direction = Vector2.ZERO
 var bodies = []
 
 func _ready():
-	var rotation = round(global_rotation_degrees)
-	if rotation == 0:
+	var _rotation = round(global_rotation_degrees)
+	if _rotation == 0:
 		direction = Vector2(0, -1)
-	elif rotation == 180:
+	elif _rotation == 180 or _rotation == -180:
 		direction = Vector2(0, 1)
-	elif rotation == 90:
+	elif _rotation == 90:
 		direction = Vector2(1, 0)
-	elif rotation == 270 or rotation == -90:
+	elif _rotation == 270 or _rotation == -90:
 		direction = Vector2(-1, 0)
 
 func _physics_process(delta):
