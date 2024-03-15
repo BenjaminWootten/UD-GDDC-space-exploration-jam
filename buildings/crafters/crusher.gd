@@ -16,9 +16,6 @@ var recipes = {
 
 var recipe = recipes["none"]
 
-func _ready():
-	update_recipe("iron_plate")
-
 func update_recipe(newRecipe):
 	recipe = recipes[newRecipe]
 	input.input_type = recipe["input_type"]
