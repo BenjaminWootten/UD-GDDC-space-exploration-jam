@@ -35,3 +35,7 @@ func _on_timer_timeout():
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		$CanvasLayer/recipe_select.visible=true
+
+func _button_pressed(a):
+	print(a)
+	$CanvasLayer/recipe_select.visible=false
