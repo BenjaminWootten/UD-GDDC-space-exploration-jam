@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxvelhgs8tpat"]
+
+[ext_resource type="Script" path="res://buildings/crafters/machine.gd" id="1_803fx"]
+[ext_resource type="PackedScene" uid="uid://f8wyhdc87t2w" path="res://buildings/conveyors/conveyor.tscn" id="2_nauqu"]
+[ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="3_ok4r4"]
+[ext_resource type="Shape2D" uid="uid://cog31ntdmglii" path="res://buildings/building resources/2x2_hitbox.tres" id="4_5q08r"]
+[ext_resource type="PackedScene" uid="uid://g6on45cl571h" path="res://buildings/building resources/input.tscn" id="5_udmwe"]
+[ext_resource type="PackedScene" uid="uid://b02mpu4t3xc8w" path="res://buildings/building resources/output.tscn" id="6_pckf4"]
+[ext_resource type="PackedScene" uid="uid://danurr23cm2s4" path="res://UI/building_ui.tscn" id="7_woh18"]
+[ext_resource type="PackedScene" uid="uid://bwf0yc1cae1s4" path="res://UI/recipe_select.tscn" id="8_b7qrx"]
+
+[node name="Crusher" type="StaticBody2D"]
+collision_layer = 9
+input_pickable = true
+script = ExtResource("1_803fx")
+
+[node name="Conveyor" parent="." instance=ExtResource("2_nauqu")]
+position = Vector2(16, -16)
+
+[node name="placement_collider" parent="Conveyor" index="2"]
+collision_layer = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ok4r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = ExtResource("4_5q08r")
+
+[node name="Input" parent="." instance=ExtResource("5_udmwe")]
+position = Vector2(16, 16)
+
+[node name="Output" parent="." instance=ExtResource("6_pckf4")]
+position = Vector2(16, -24)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="building_ui" parent="CanvasLayer" instance=ExtResource("7_woh18")]
+visible = false
+
+[node name="recipe_select" parent="CanvasLayer" instance=ExtResource("8_b7qrx")]
+visible = false
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Conveyor"]

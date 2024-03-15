@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://byelhi1v7scuv"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_osjgs"]
+[ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="2_rejdm"]
+[ext_resource type="Shape2D" uid="uid://ufpogfkxk8kh" path="res://items/item_hitbox.tres" id="3_24dvf"]
+
+[node name="lead_plate" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_osjgs")
+metadata/item_type = "iron_plate"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(3, 3, 3, 1)
+scale = Vector2(0.125, 0.046875)
+texture = ExtResource("2_rejdm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = ExtResource("3_24dvf")

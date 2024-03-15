@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cn1hsv2nyoqrj" path="res://Player.tscn" id="1_85nff"]
 [ext_resource type="PackedScene" uid="uid://f8wyhdc87t2w" path="res://buildings/conveyors/conveyor.tscn" id="2_3vhja"]
-[ext_resource type="PackedScene" uid="uid://c5qp4noe7qt3s" path="res://items/iron.tscn" id="3_weype"]
+[ext_resource type="PackedScene" uid="uid://c5qp4noe7qt3s" path="res://items/lead_bar.tscn" id="3_weype"]
 [ext_resource type="PackedScene" uid="uid://d0xyhvyrdq3gl" path="res://UI/build_menu.tscn" id="5_xdaow"]
 
 [node name="World" type="Node2D"]

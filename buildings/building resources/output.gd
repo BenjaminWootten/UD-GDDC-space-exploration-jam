@@ -3,8 +3,8 @@ extends Area2D
 @onready var item_container = get_node("/root/World/items")
 
 var items = {
-	iron = preload("res://items/iron.tscn"),
-	iron_plate = preload("res://items/iron_plate.tscn")
+	iron = preload("res://items/lead_bar.tscn"),
+	iron_plate = preload("res://items/lead_plate.tscn")
 }
 
 func spawn(itemName):
