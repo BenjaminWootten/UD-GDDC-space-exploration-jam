@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmvnmajg4h84j"]
+[gd_scene load_steps=8 format=3 uid="uid://cmvnmajg4h84j"]
 
 [ext_resource type="Script" path="res://buildings/crafters/crusher.gd" id="1_6k6qk"]
 [ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="1_rmbki"]
@@ -6,9 +6,11 @@
 [ext_resource type="Shape2D" uid="uid://cog31ntdmglii" path="res://buildings/building resources/2x2_hitbox.tres" id="3_6a2sq"]
 [ext_resource type="PackedScene" uid="uid://b02mpu4t3xc8w" path="res://buildings/building resources/output.tscn" id="3_nougl"]
 [ext_resource type="PackedScene" uid="uid://danurr23cm2s4" path="res://UI/building_ui.tscn" id="5_cgiwc"]
+[ext_resource type="PackedScene" uid="uid://bwf0yc1cae1s4" path="res://UI/recipe_select.tscn" id="7_kpk15"]
 
 [node name="Crusher" type="StaticBody2D"]
 collision_layer = 9
+input_pickable = true
 script = ExtResource("1_6k6qk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -32,4 +34,8 @@ one_shot = true
 [node name="building_ui" parent="CanvasLayer" instance=ExtResource("5_cgiwc")]
 visible = false
 
+[node name="recipe_select" parent="CanvasLayer" instance=ExtResource("7_kpk15")]
+visible = false
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

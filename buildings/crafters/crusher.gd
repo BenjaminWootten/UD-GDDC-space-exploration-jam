@@ -31,3 +31,7 @@ func _on_timer_timeout():
 	_on_input_updated()
 	output_inventory += recipe["output_num"]
 	output.spawn(recipe["output_type"])
+
+func _on_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		$CanvasLayer/recipe_select.visible=true

@@ -1,6 +1,22 @@
 [gd_scene load_steps=2 format=3 uid="uid://danurr23cm2s4"]
 
-[ext_resource type="Script" path="res://building_ui.gd" id="1_32m55"]
+[sub_resource type="GDScript" id="GDScript_gdr0i"]
+script/source = "extends Control
+
+@onready var building = get_parent().get_parent()
+@export var dropdown: OptionButton
+
+var recipe_data = []
+
+func _ready():
+	# For each recipe stored in the recipe dictionary on parent building, add its name to the dropdown menu
+	for recipe in building.recipes:
+		dropdown.add_item(building.recipes[recipe][\"output_type\"].replace(\"_\", \" \").capitalize())
+		recipe_data.append(building.recipes[recipe])
+
+func _on_option_button_item_selected(index):
+	building.update_recipe()
+"
 
 [node name="building_ui" type="Control" node_paths=PackedStringArray("dropdown")]
 layout_mode = 3
@@ -9,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_32m55")
+script = SubResource("GDScript_gdr0i")
 dropdown = NodePath("ColorRect/VBoxContainer/OptionButton")
 
 [node name="ColorRect" type="ColorRect" parent="."]
