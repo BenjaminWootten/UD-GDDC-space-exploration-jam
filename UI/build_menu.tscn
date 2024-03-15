@@ -17,6 +17,7 @@ grow_vertical = 2
 collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_gkbb0")
+destroy_texture = ExtResource("2_3mu45")
 crusher_texture = ExtResource("2_3mu45")
 conveyor_texture = ExtResource("2_3mu45")
 hitbox_2x2 = ExtResource("3_8c454")
@@ -25,6 +26,10 @@ hitbox_1x1 = ExtResource("4_bsy6g")
 [node name="Sprite2D" type="Sprite2D" parent="placement_preview"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="placement_preview"]
+
+[node name="Timer" type="Timer" parent="placement_preview"]
+wait_time = 0.1
+one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -46,16 +51,18 @@ grow_vertical = 2
 
 [node name="conveyor" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
 text = "Conveyor"
 
 [node name="crusher" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
 text = "Crusher"
 
 [connection signal="area_entered" from="placement_preview" to="placement_preview" method="_on_body_entered"]
 [connection signal="area_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
 [connection signal="body_entered" from="placement_preview" to="placement_preview" method="_on_body_entered"]
 [connection signal="body_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
-[connection signal="input_event" from="placement_preview" to="placement_preview" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/ColorRect" to="placement_preview" method="_on_color_rect_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/conveyor" to="placement_preview" method="_on_conveyor_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/crusher" to="placement_preview" method="_on_crusher_pressed"]

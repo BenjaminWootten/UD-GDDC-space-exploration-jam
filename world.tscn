@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgsw0w3y4jvc0"]
+[gd_scene load_steps=5 format=3 uid="uid://dgsw0w3y4jvc0"]
 
 [ext_resource type="PackedScene" uid="uid://cn1hsv2nyoqrj" path="res://Player.tscn" id="1_85nff"]
 [ext_resource type="PackedScene" uid="uid://f8wyhdc87t2w" path="res://buildings/conveyors/conveyor.tscn" id="2_3vhja"]
 [ext_resource type="PackedScene" uid="uid://c5qp4noe7qt3s" path="res://items/iron.tscn" id="3_weype"]
-[ext_resource type="PackedScene" uid="uid://cmvnmajg4h84j" path="res://buildings/crafters/crusher.tscn" id="4_ssxuj"]
 [ext_resource type="PackedScene" uid="uid://d0xyhvyrdq3gl" path="res://UI/build_menu.tscn" id="5_xdaow"]
 
 [node name="World" type="Node2D"]
@@ -11,43 +10,74 @@
 [node name="conveyors" type="Node2D" parent="."]
 
 [node name="Conveyor" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(128, -96)
+position = Vector2(128, -32)
 
 [node name="Conveyor2" parent="conveyors" instance=ExtResource("2_3vhja")]
 position = Vector2(128, -64)
 
 [node name="Conveyor3" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(128, -32)
+position = Vector2(128, -96)
 
 [node name="Conveyor4" parent="conveyors" instance=ExtResource("2_3vhja")]
 position = Vector2(128, -128)
-rotation = 1.5708
 
 [node name="Conveyor5" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(160, -128)
-rotation = 1.5708
+position = Vector2(128, -160)
+rotation = 1.57079
 
 [node name="Conveyor6" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(192, -128)
-rotation = 1.5708
+position = Vector2(160, -160)
+rotation = 1.57079
+
+[node name="Conveyor7" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(192, -160)
+rotation = 1.57079
 
 [node name="Conveyor8" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(288, -128)
-rotation = 1.5708
+position = Vector2(224, -160)
+rotation = 1.57079
 
 [node name="Conveyor9" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(320, -96)
-rotation = 3.14159
+position = Vector2(256, -160)
+rotation = 1.57079
 
 [node name="Conveyor10" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(288, -160)
+rotation = 1.57079
+
+[node name="Conveyor11" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(320, -160)
+rotation = 3.14159
+
+[node name="Conveyor12" parent="conveyors" instance=ExtResource("2_3vhja")]
 position = Vector2(320, -128)
 rotation = 3.14159
 
-[node name="machines" type="Node2D" parent="."]
+[node name="Conveyor13" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(320, -96)
+rotation = 3.14159
 
-[node name="Crusher" parent="machines" instance=ExtResource("4_ssxuj")]
-position = Vector2(240, -144)
-rotation = 1.5708
+[node name="Conveyor14" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(320, -64)
+rotation = 3.14159
+
+[node name="Conveyor15" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(320, -32)
+rotation = 4.71238
+
+[node name="Conveyor16" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(288, -32)
+rotation = 4.71238
+
+[node name="Conveyor17" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(256, -32)
+rotation = 4.71238
+
+[node name="Conveyor18" parent="conveyors" instance=ExtResource("2_3vhja")]
+position = Vector2(224, -32)
+rotation = 4.71238
+
+[node name="machines" type="Node2D" parent="."]
 
 [node name="items" type="Node2D" parent="."]
 
