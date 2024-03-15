@@ -22,12 +22,10 @@ func _on_input_updated():
 func _on_timer_timeout():
 	_on_input_updated()
 	output_inventory += recipe["output_num"]
-	output.spawn(recipe["output_type"])
+	while output_inventory > 0:
+		output.spawn(recipe["output_type"])
+		output_inventory -= 1
 
 func _on_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("left_click"):
 		$CanvasLayer/recipe_select.visible=true
-
-func _button_pressed(a):
-	print(a)
-	$CanvasLayer/recipe_select.visible=false

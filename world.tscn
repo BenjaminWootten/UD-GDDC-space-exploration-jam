@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cn1hsv2nyoqrj" path="res://Player.tscn" id="1_85nff"]
 [ext_resource type="PackedScene" uid="uid://f8wyhdc87t2w" path="res://buildings/conveyors/conveyor.tscn" id="2_3vhja"]
-[ext_resource type="PackedScene" uid="uid://c5qp4noe7qt3s" path="res://items/lead_bar.tscn" id="3_weype"]
+[ext_resource type="PackedScene" uid="uid://1u0npjhd7wdi" path="res://items/lead_ore.tscn" id="2_xkrht"]
 [ext_resource type="PackedScene" uid="uid://d0xyhvyrdq3gl" path="res://UI/build_menu.tscn" id="5_xdaow"]
 
 [node name="World" type="Node2D"]
@@ -73,19 +73,15 @@ rotation = 4.71238
 position = Vector2(256, -32)
 rotation = 4.71238
 
-[node name="Conveyor18" parent="conveyors" instance=ExtResource("2_3vhja")]
-position = Vector2(224, -32)
-rotation = 4.71238
-
 [node name="machines" type="Node2D" parent="."]
 
 [node name="items" type="Node2D" parent="."]
 
-[node name="iron" parent="items" instance=ExtResource("3_weype")]
-position = Vector2(128, -32)
+[node name="lead_ore" parent="items" instance=ExtResource("2_xkrht")]
+position = Vector2(120, -24)
 
-[node name="iron2" parent="items" instance=ExtResource("3_weype")]
-position = Vector2(128, -32)
+[node name="lead_ore2" parent="items" instance=ExtResource("2_xkrht")]
+position = Vector2(120, -24)
 
 [node name="build_menu" parent="." instance=ExtResource("5_xdaow")]
 

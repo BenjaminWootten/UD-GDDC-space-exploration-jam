@@ -9,6 +9,7 @@ collision_layer = 2
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_osjgs")
+item_type = "lead_plate"
 metadata/item_type = "iron_plate"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

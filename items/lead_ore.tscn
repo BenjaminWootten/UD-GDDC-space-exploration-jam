@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://1u0npjhd7wdi"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_xq5yw"]
+[ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="2_c0e2c"]
+[ext_resource type="Shape2D" uid="uid://ufpogfkxk8kh" path="res://items/item_hitbox.tres" id="3_yx0p5"]
+
+[node name="lead_ore" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_xq5yw")
+item_type = "lead_ore"
+metadata/item_type = "iron_plate"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.376471, 0.376471, 0.376471, 1)
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_c0e2c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = ExtResource("3_yx0p5")

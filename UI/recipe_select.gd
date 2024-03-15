@@ -11,4 +11,4 @@ func _ready():
 		button.text=building.recipes[recipe]["output_type"].replace("_", " ").capitalize()
 		$MarginContainer/ScrollContainer/MarginContainer/VBoxContainer.add_child(button)
 		recipe_data.append(building.recipes[recipe])
-		button.pressed.connect(building._button_pressed.bind(button.text.replace(" ", "_").to_lower()))
+		button.pressed.connect(building._button_pressed.bind(building.recipes[recipe]["output_type"]))

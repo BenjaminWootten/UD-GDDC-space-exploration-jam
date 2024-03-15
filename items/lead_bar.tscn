@@ -9,7 +9,7 @@ collision_layer = 2
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_g371f")
-metadata/item_type = "iron"
+item_type = "lead_bar"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(3, 3, 3, 1)

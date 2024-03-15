@@ -20,6 +20,8 @@ const SNAP = 32
 var crusher_path = preload("res://buildings/crafters/crusher.tscn")
 @export var conveyor_texture: CompressedTexture2D
 var conveyor_path = preload("res://buildings/conveyors/conveyor.tscn")
+@export var smelter_texture: CompressedTexture2D
+var smelter_path = preload("res://buildings/crafters/smelter.tscn")
 
 @export var hitbox_2x2: RectangleShape2D
 @export var hitbox_1x1: RectangleShape2D
@@ -92,6 +94,12 @@ func _on_conveyor_pressed():
 
 func _on_crusher_pressed():
 	placement_start(crusher_texture,  hitbox_2x2, 16, crusher_path)
+	# Temporary to account for placeholder texture size/color
+	sprite.scale = Vector2(0.5,0.5)
+	sprite.modulate = Color(0,1,0)
+
+func _on_smelter_pressed():
+	placement_start(smelter_texture,  hitbox_2x2, 16, smelter_path)
 	# Temporary to account for placeholder texture size/color
 	sprite.scale = Vector2(0.5,0.5)
 	sprite.modulate = Color(0,1,0)

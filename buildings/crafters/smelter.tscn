@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cxvelhgs8tpat"]
 
-[ext_resource type="Script" path="res://buildings/crafters/machine.gd" id="1_803fx"]
+[ext_resource type="Script" path="res://buildings/crafters/smelter.gd" id="1_quqtq"]
 [ext_resource type="PackedScene" uid="uid://f8wyhdc87t2w" path="res://buildings/conveyors/conveyor.tscn" id="2_nauqu"]
 [ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="3_ok4r4"]
 [ext_resource type="Shape2D" uid="uid://cog31ntdmglii" path="res://buildings/building resources/2x2_hitbox.tres" id="4_5q08r"]
@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://danurr23cm2s4" path="res://UI/building_ui.tscn" id="7_woh18"]
 [ext_resource type="PackedScene" uid="uid://bwf0yc1cae1s4" path="res://UI/recipe_select.tscn" id="8_b7qrx"]
 
-[node name="Crusher" type="StaticBody2D"]
+[node name="Smelter" type="StaticBody2D"]
 collision_layer = 9
 input_pickable = true
-script = ExtResource("1_803fx")
+script = ExtResource("1_quqtq")
 
 [node name="Conveyor" parent="." instance=ExtResource("2_nauqu")]
 position = Vector2(16, -16)
@@ -21,6 +21,7 @@ position = Vector2(16, -16)
 collision_layer = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.356863, 0.356863, 0.356863, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_ok4r4")
 

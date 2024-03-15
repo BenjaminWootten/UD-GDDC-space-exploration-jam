@@ -14,6 +14,7 @@ script = ExtResource("1_gkbb0")
 destroy_texture = ExtResource("2_3mu45")
 crusher_texture = ExtResource("2_3mu45")
 conveyor_texture = ExtResource("2_3mu45")
+smelter_texture = ExtResource("2_3mu45")
 hitbox_2x2 = ExtResource("3_8c454")
 hitbox_1x1 = ExtResource("4_bsy6g")
 
@@ -53,6 +54,11 @@ layout_mode = 2
 mouse_filter = 1
 text = "Crusher"
 
+[node name="smelter" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "Smelter"
+
 [connection signal="area_entered" from="placement_preview" to="placement_preview" method="_on_body_entered"]
 [connection signal="area_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
 [connection signal="body_entered" from="placement_preview" to="placement_preview" method="_on_body_entered"]
@@ -60,3 +66,4 @@ text = "Crusher"
 [connection signal="mouse_entered" from="CanvasLayer/ColorRect" to="placement_preview" method="_on_color_rect_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/conveyor" to="placement_preview" method="_on_conveyor_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/crusher" to="placement_preview" method="_on_crusher_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/smelter" to="placement_preview" method="_on_smelter_pressed"]

@@ -6,3 +6,7 @@ var recipes = {
 	coal_powder = {input_type = "coal", input_num = 1, output_type = "coal_powder", output_num = 2, time = 2},
 	sulfur_powder = {input_type = "sulfur", input_num = 1, output_type = "sulfur_powder", output_num = 1, time = 2},
 }
+
+func _button_pressed(recipeName):
+	update_recipe(recipeName, recipes)
+	$CanvasLayer/recipe_select.visible=false
