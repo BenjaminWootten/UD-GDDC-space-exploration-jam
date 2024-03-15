@@ -33,7 +33,7 @@ func _on_timer_timeout():
 	output.spawn(recipe["output_type"])
 
 func _on_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
+	if Input.is_action_just_pressed("left_click"):
 		$CanvasLayer/recipe_select.visible=true
 
 func _button_pressed(a):
