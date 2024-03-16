@@ -5,21 +5,21 @@
 [ext_resource type="Shape2D" uid="uid://c0n0i1f5hw0ot" path="res://buildings/building resources/1x1_hitbox.tres" id="3_fbkg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c3pg"]
-size = Vector2(4, 44)
+size = Vector2(4, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_01e7l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v5n2"]
 atlas = ExtResource("2_okl6w")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dnd85"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uy0k"]
 atlas = ExtResource("2_okl6w")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cjfb1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2bem"]
 atlas = ExtResource("2_okl6w")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ttso"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdh8t"]
 atlas = ExtResource("2_okl6w")
 region = Rect2(96, 0, 32, 32)
 
@@ -27,30 +27,31 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_01e7l")
+"texture": SubResource("AtlasTexture_6v5n2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dnd85")
+"texture": SubResource("AtlasTexture_4uy0k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cjfb1")
+"texture": SubResource("AtlasTexture_x2bem")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ttso")
+"texture": SubResource("AtlasTexture_wdh8t")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Conveyor" type="Area2D" groups=["conveyors"]]
+[node name="Conveyor" type="Area2D" node_paths=PackedStringArray("animated_sprite") groups=["conveyors"]]
 collision_layer = 2
 collision_mask = 6
 script = ExtResource("1_fl3m8")
 MOVE_SPEED = Vector2(100, 100)
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_2c3pg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -100,21 +100,12 @@ func _input(event):
 
 func _on_conveyor_pressed():
 	placement_start(conveyor_texture, hitbox_1x1, 0, conveyor_path)
-	# Temporary to account for placeholder texture size/color
-	sprite.scale = Vector2(0.25,0.25)
-	sprite.modulate = Color(0,0.5,0)
 
 func _on_crusher_pressed():
 	placement_start(crusher_texture,  hitbox_2x2, 16, crusher_path)
-	# Temporary to account for placeholder texture size/color
-	sprite.scale = Vector2(0.5,0.5)
-	sprite.modulate = Color(0,1,0)
 
 func _on_smelter_pressed():
 	placement_start(smelter_texture,  hitbox_2x2, 16, smelter_path)
-	# Temporary to account for placeholder texture size/color
-	sprite.scale = Vector2(0.5,0.5)
-	sprite.modulate = Color(0,1,0)
 
 func _on_button_pressed():
 	placement_start(crafter_texture,  hitbox_2x2, 16, crafter_path)

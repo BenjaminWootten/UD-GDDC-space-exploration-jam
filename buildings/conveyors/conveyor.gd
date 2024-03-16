@@ -1,11 +1,19 @@
 extends Area2D
 
 @export var MOVE_SPEED = Vector2(200, 200)
+@export var animated_sprite: AnimatedSprite2D
 
 var direction = Vector2.ZERO
 var bodies = []
 
 func _ready():
+	# get all conveyors
+	var group_list = get_tree().get_nodes_in_group("conveyors")
+	# if there are other conveyors, sync animation frame and progress
+	if group_list:
+		var other_animation = group_list[0].animated_sprite
+		animated_sprite.set_frame_and_progress(other_animation.get_frame(), other_animation.get_frame_progress())
+	
 	var _rotation = round(global_rotation_degrees)
 	if _rotation == 0:
 		direction = Vector2(0, -1)

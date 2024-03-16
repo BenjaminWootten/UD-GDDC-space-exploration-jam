@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0xyhvyrdq3gl"]
+[gd_scene load_steps=8 format=3 uid="uid://d0xyhvyrdq3gl"]
 
 [ext_resource type="Script" path="res://UI/placement_preview.gd" id="1_gkbb0"]
 [ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="2_3mu45"]
+[ext_resource type="Texture2D" uid="uid://d4apqn6dbk3v6" path="res://buildings/building resources/smelter.png" id="2_dgy2a"]
+[ext_resource type="Texture2D" uid="uid://k303ijdo1pai" path="res://buildings/building resources/crusher.png" id="2_jnxjo"]
 [ext_resource type="Shape2D" uid="uid://cog31ntdmglii" path="res://buildings/building resources/2x2_hitbox.tres" id="3_8c454"]
+[ext_resource type="Texture2D" uid="uid://e5e3silagr3j" path="res://buildings/conveyors/conveyor_single.png" id="3_wiqyp"]
 [ext_resource type="Shape2D" uid="uid://c0n0i1f5hw0ot" path="res://buildings/building resources/1x1_hitbox.tres" id="4_bsy6g"]
 
 [node name="build_menu" type="Node2D"]
@@ -11,9 +14,9 @@
 collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_gkbb0")
-crusher_texture = ExtResource("2_3mu45")
-conveyor_texture = ExtResource("2_3mu45")
-smelter_texture = ExtResource("2_3mu45")
+crusher_texture = ExtResource("2_jnxjo")
+conveyor_texture = ExtResource("3_wiqyp")
+smelter_texture = ExtResource("2_dgy2a")
 crafter_texture = ExtResource("2_3mu45")
 amalgamator_texture = ExtResource("2_3mu45")
 miner_texture = ExtResource("2_3mu45")
@@ -21,6 +24,7 @@ hitbox_2x2 = ExtResource("3_8c454")
 hitbox_1x1 = ExtResource("4_bsy6g")
 
 [node name="Sprite2D" type="Sprite2D" parent="placement_preview"]
+texture_filter = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="placement_preview"]
 
