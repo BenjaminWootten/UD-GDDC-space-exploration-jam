@@ -5,7 +5,7 @@
 [ext_resource type="Shape2D" uid="uid://c0n0i1f5hw0ot" path="res://buildings/building resources/1x1_hitbox.tres" id="3_fbkg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c3pg"]
-size = Vector2(4, 44)
+size = Vector2(4, 41)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8c7gy"]
 atlas = ExtResource("2_okl6w")
@@ -50,7 +50,7 @@ script = ExtResource("1_fl3m8")
 MOVE_SPEED = Vector2(100, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_2c3pg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
