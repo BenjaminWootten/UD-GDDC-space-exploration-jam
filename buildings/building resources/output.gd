@@ -3,6 +3,7 @@ extends Area2D
 @onready var item_container = get_node("/root/World/items")
 
 var items = {
+	lead_ore = preload("res://items/lead_ore.tscn"),
 	lead_bar = preload("res://items/lead_bar.tscn"),
 	lead_plate = preload("res://items/lead_plate.tscn"),
 	lead_casing = preload("res://items/lead_casing.tscn"),

@@ -68,6 +68,7 @@ right_click={
 2d_physics/layer_2="Items"
 2d_physics/layer_3="Player/Conveyors"
 2d_physics/layer_4="Placement collisions"
+2d_physics/layer_5="Ore/miner detection"
 
 [rendering]
 

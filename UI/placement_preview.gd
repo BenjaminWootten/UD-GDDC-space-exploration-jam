@@ -27,6 +27,12 @@ var smelter_path = preload("res://buildings/crafters/smelter.tscn")
 @export var crafter_texture: CompressedTexture2D
 var crafter_path = preload("res://buildings/crafters/crafter.tscn")
 
+@export var amalgamator_texture: CompressedTexture2D
+var amalgamator_path = preload("res://buildings/crafters/amalgamator.tscn")
+
+@export var miner_texture: CompressedTexture2D
+var miner_path = preload("res://buildings/miners/miner.tscn")
+
 @export var hitbox_2x2: RectangleShape2D
 @export var hitbox_1x1: RectangleShape2D
 
@@ -35,8 +41,10 @@ func _process(delta):
 	if get_overlapping_areas() or get_overlapping_bodies():
 		colliders = get_overlapping_areas() + get_overlapping_bodies()
 		colliding = true
+		sprite.modulate = Color(1,0,0)
 	else:
 		colliding = false
+		sprite.modulate = Color(0,1,0)
 	
 	if placing:
 		# Move preview to mouse
@@ -112,4 +120,16 @@ func _on_button_pressed():
 	placement_start(crafter_texture,  hitbox_2x2, 16, crafter_path)
 	# Temporary to account for placeholder texture size/color
 	sprite.scale = Vector2(0.5,0.5)
+	sprite.modulate = Color(0,1,0)
+
+func _on_amalgamator_pressed():
+	placement_start(amalgamator_texture,  hitbox_2x2, 16, amalgamator_path)
+	# Temporary to account for placeholder texture size/color
+	sprite.scale = Vector2(0.5,0.5)
+	sprite.modulate = Color(0,1,0)
+
+func _on_miner_pressed():
+	placement_start(miner_texture,  hitbox_1x1, 0, miner_path)
+	# Temporary to account for placeholder texture size/color
+	sprite.scale = Vector2(0.25,0.25)
 	sprite.modulate = Color(0,1,0)

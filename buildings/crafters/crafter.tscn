@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw271u3pp3qnf"]
+[gd_scene load_steps=8 format=3 uid="uid://bw271u3pp3qnf"]
 
 [ext_resource type="Script" path="res://buildings/crafters/crafter.gd" id="1_b3ub3"]
-[ext_resource type="PackedScene" uid="uid://f8wyhdc87t2w" path="res://buildings/conveyors/conveyor.tscn" id="2_fx60h"]
 [ext_resource type="Texture2D" uid="uid://cdxrqhqnd634s" path="res://icon.svg" id="3_oniv8"]
 [ext_resource type="Shape2D" uid="uid://cog31ntdmglii" path="res://buildings/building resources/2x2_hitbox.tres" id="4_cknsc"]
 [ext_resource type="PackedScene" uid="uid://g6on45cl571h" path="res://buildings/building resources/input.tscn" id="5_c3g32"]
@@ -13,12 +12,6 @@
 collision_layer = 9
 input_pickable = true
 script = ExtResource("1_b3ub3")
-
-[node name="Conveyor" parent="." instance=ExtResource("2_fx60h")]
-position = Vector2(16, -16)
-
-[node name="placement_collider" parent="Conveyor" index="2"]
-collision_layer = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.823529, 0, 0.780392, 1)
@@ -47,5 +40,3 @@ visible = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-
-[editable path="Conveyor"]

@@ -15,6 +15,8 @@ crusher_texture = ExtResource("2_3mu45")
 conveyor_texture = ExtResource("2_3mu45")
 smelter_texture = ExtResource("2_3mu45")
 crafter_texture = ExtResource("2_3mu45")
+amalgamator_texture = ExtResource("2_3mu45")
+miner_texture = ExtResource("2_3mu45")
 hitbox_2x2 = ExtResource("3_8c454")
 hitbox_1x1 = ExtResource("4_bsy6g")
 
@@ -49,20 +51,30 @@ layout_mode = 2
 mouse_filter = 1
 text = "Conveyor"
 
-[node name="crusher" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="crafter" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
-text = "Crusher"
+text = "Crafter"
 
 [node name="smelter" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
 text = "Smelter"
 
-[node name="crafter" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="crusher" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
-text = "Crafter"
+text = "Crusher"
+
+[node name="amalgamator" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "Amalgamator"
+
+[node name="miner" type="Button" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "Miner"
 
 [connection signal="area_entered" from="placement_preview" to="placement_preview" method="_on_body_entered"]
 [connection signal="area_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
@@ -70,6 +82,8 @@ text = "Crafter"
 [connection signal="body_exited" from="placement_preview" to="placement_preview" method="_on_body_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/ColorRect" to="placement_preview" method="_on_color_rect_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/conveyor" to="placement_preview" method="_on_conveyor_pressed"]
-[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/crusher" to="placement_preview" method="_on_crusher_pressed"]
-[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/smelter" to="placement_preview" method="_on_smelter_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/crafter" to="placement_preview" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/smelter" to="placement_preview" method="_on_smelter_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/crusher" to="placement_preview" method="_on_crusher_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/amalgamator" to="placement_preview" method="_on_amalgamator_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/VBoxContainer/miner" to="placement_preview" method="_on_miner_pressed"]
