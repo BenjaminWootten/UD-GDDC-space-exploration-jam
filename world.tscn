@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cxvelhgs8tpat" path="res://buildings/crafters/smelter.tscn" id="2_d2xt1"]
 [ext_resource type="PackedScene" uid="uid://cmvnmajg4h84j" path="res://buildings/crafters/crusher.tscn" id="3_jj58v"]
 [ext_resource type="PackedScene" uid="uid://bu5ykhblrcxc4" path="res://ore_deposits/deposit_coal.tscn" id="3_k7v0f"]
-[ext_resource type="PackedScene" uid="uid://cyng6mvbc5luo" path="res://buildings/crafters/amalgamator.tscn" id="4_oo2r2"]
+[ext_resource type="PackedScene" path="res://buildings/crafters/amalgamator.tscn" id="4_oo2r2"]
 [ext_resource type="PackedScene" uid="uid://darhd3jjamndo" path="res://ore_deposits/deposit_sulfur.tscn" id="4_tfudo"]
-[ext_resource type="PackedScene" uid="uid://bw271u3pp3qnf" path="res://buildings/crafters/crafter.tscn" id="5_ixtx0"]
+[ext_resource type="PackedScene" path="res://buildings/crafters/crafter.tscn" id="5_ixtx0"]
 [ext_resource type="PackedScene" uid="uid://d0xyhvyrdq3gl" path="res://UI/build_menu.tscn" id="5_xdaow"]
 [ext_resource type="PackedScene" uid="uid://uiv3u4n50bi7" path="res://ore_deposits/deposit_lead_ore.tscn" id="9_ef3bv"]
 

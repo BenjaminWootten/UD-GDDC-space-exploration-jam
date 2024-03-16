@@ -5,38 +5,38 @@
 [ext_resource type="Shape2D" uid="uid://c0n0i1f5hw0ot" path="res://buildings/building resources/1x1_hitbox.tres" id="3_fbkg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c3pg"]
-size = Vector2(4, 41)
+size = Vector2(4, 44)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8c7gy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_01e7l"]
 atlas = ExtResource("2_okl6w")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oda8g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnd85"]
 atlas = ExtResource("2_okl6w")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8axx4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjfb1"]
 atlas = ExtResource("2_okl6w")
-region = Rect2(0, 32, 32, 32)
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wjh8p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ttso"]
 atlas = ExtResource("2_okl6w")
-region = Rect2(32, 32, 32, 32)
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ai60p"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8c7gy")
+"texture": SubResource("AtlasTexture_01e7l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oda8g")
+"texture": SubResource("AtlasTexture_dnd85")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8axx4")
+"texture": SubResource("AtlasTexture_cjfb1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wjh8p")
+"texture": SubResource("AtlasTexture_1ttso")
 }],
 "loop": true,
 "name": &"default",
@@ -50,11 +50,10 @@ script = ExtResource("1_fl3m8")
 MOVE_SPEED = Vector2(100, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4.5)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_2c3pg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_ai60p")
 autoplay = "default"
 speed_scale = 4.0
